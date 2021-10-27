@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+.App {
+  min-height: 95vh;
+  overflow-y: scroll; /*added becuase glithy screen with framer*/
+}
+
+h3,
+h4,
+h5 {
+  padding-bottom: 0.4em;
+}

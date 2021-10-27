@@ -1,0 +1,30 @@
+.yearpick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid white; */
+  min-width: 100px;
+}
+
+.slide {
+  /* border: 2px solid white; */
+  width: 85%;
+}
+
+.btn-2 {
+  display: flex;
+  margin-top: 2em;
+}
+
+.btn {
+  margin: 0 1em;
+}
+
+span.MuiSlider-markLabel[data-index="0"] {
+  transform: translate(-13px, -50px);
+  color: palegoldenrod;
+}
+
+span.MuiSlider-markLabel {
+  font-size: 1.3em;
+}

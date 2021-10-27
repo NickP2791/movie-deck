@@ -1,0 +1,35 @@
+* {
+  font-family: "Quicksand";
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.section__top {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 55vh;
+}
+
+.section__bottom {
+  display: flex;
+  height: 85vh;
+  position: absolute;
+}
+
+#imgleft,
+#imgright {
+  height: 100%;
+  width: 100%;
+}
+
+#imgright {
+  position: absolute;
+}
