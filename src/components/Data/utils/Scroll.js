@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TiArrowUpOutline } from "react-icons/ti";
 import { IconButton, makeStyles } from "@material-ui/core";
 
+//material UI styling
 const useStyles = makeStyles({
   iconButton: {
     position: "fixed",
@@ -17,6 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
+//scroll to the top button
 const Scroll = ({ showBelow }) => {
   const classes = useStyles();
   const [show, setShow] = useState(!showBelow);

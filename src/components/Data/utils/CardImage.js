@@ -1,3 +1,5 @@
+//the key for each of these is the matching genre id that comes TMDB
+
 const CardImage = {
   12: require("components/Data/images/I12.jpg").default,
   14: require("components/Data/images/I14.jpg").default,

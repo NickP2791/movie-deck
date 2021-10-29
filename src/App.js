@@ -13,6 +13,7 @@ import WishList from "components/Pages/WishList";
 import HiddenMovieList from "components/Pages/HiddenMovies/HiddenMovieList";
 import Trending from "components/Pages/Trending/Trending";
 import Testing from "./components/Testing";
+import About from "./components/Pages/About/About";
 import {
   createTheme,
   ThemeProvider,
@@ -73,6 +74,7 @@ function App() {
                 <Route path='/hiddenmovielist' component={HiddenMovieList} />
                 <Route path='/trending' component={Trending} />
                 <Route path='/testing' component={Testing} />
+                <Route path='/about' component={About} />
               </Switch>
             </AnimatePresence>
           </div>

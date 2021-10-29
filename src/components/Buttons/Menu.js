@@ -50,7 +50,7 @@ const Menu = () => {
     {
       text: "About",
       icon: <MdInfoOutline />,
-      path: "/",
+      path: "/about",
     },
   ];
 

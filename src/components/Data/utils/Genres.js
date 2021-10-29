@@ -1,6 +1,10 @@
 const darkBG = "#00000087";
 const lightBG = "#ffffffa1";
 
+//this page contains the information to match with the list from TMDB AND
+//most importantly, all the information to display the cards properly in the QUIZ
+
+//card can display different font color, bg color and the direction/side the text is displayed
 const Genres = [
   {
     id: 28,
