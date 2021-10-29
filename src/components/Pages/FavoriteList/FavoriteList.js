@@ -36,21 +36,6 @@ const containerVariants = {
   },
 };
 
-const textVariants = {
-  hidden: {
-    x: "100vw",
-  },
-  show: {
-    x: 0,
-    transition: {
-      mass: 0.4,
-      damping: 6,
-      type: "spring",
-      stiffness: 200,
-    },
-  },
-};
-
 const columnVariants = {
   hidden: {
     y: "100vh",
@@ -83,22 +68,30 @@ const buttonVariants = {
 
 const FavoriteList = () => {
   const { setPage } = useContext(PageContext);
-  const [genres, setGenres] = useState([]); //holds array of genre ids and description, called from TMDB
-  const [movies, setMovies] = useLocalStorage("movies", []); //strip ids from genres
+
+  //used to create list, holds array of genre ids and description, called from TMDB
+  const [genres, setGenres] = useState([]);
+
+  //strip ids from genres, movies we keep
+  const [movies, setMovies] = useLocalStorage("movies", []);
+
+  //movies checked and we remove from movie array
   const [removedGenres, setRemovedGenres] = useLocalStorage(
     "removedGenres",
     []
   );
-  const [preference, setPreference] = useLocalStorage("preference", []); // Results from questions
+
+  // Results from questions
+  const [preference, setPreference] = useLocalStorage("preference", []);
 
   useEffect(() => {
     setPage("Preferences-Genres");
   }, [setPage]);
 
   //if the user comes back to this page, all preferences are deleted
+  //preferences come from the quiz answers
   useEffect(() => {
     setPreference([]);
-    window.localStorage.removeItem("movielist");
   }, []);
 
   //fetch genre list from TMDB, parse out ids in movie state
@@ -106,7 +99,9 @@ const FavoriteList = () => {
     const getGenreList = async () => {
       const response = await axios.get(requests.getGenresList);
       setGenres([...response.data.genres]);
-      const genreArray = await response.data.genres.map((id) => id.id);
+      const genreArray = await response.data.genres
+        .map((id) => id.id) //extract ids
+        .filter((eachID) => !removedGenres.includes(eachID)); //filter out what is in removedlist
       setMovies([...genreArray]);
       return response;
     };
@@ -117,7 +112,6 @@ const FavoriteList = () => {
   }, [genres?.length, setGenres, setMovies]);
 
   const handleClick = ({ target }) => {
-    console.log("handleClick RAN");
     let { value: id, checked } = target;
 
     if (checked === true) {
@@ -129,9 +123,9 @@ const FavoriteList = () => {
     }
   };
 
+  //functions used to make state changes
   const minusMovie = function (id) {
     setMovies((prev) => prev.filter((items) => items !== parseInt(id)));
-    console.log(movies);
   };
   const plusMovie = (id) => {
     setMovies((prev) => [...prev, parseInt(id)]);

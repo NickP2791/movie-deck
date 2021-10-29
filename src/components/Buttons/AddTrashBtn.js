@@ -5,10 +5,7 @@ import { FaTrash } from "react-icons/fa";
 
 const AddTrashBtn = ({ movieId, handleRender }) => {
   //Movies ids in local storage, initial state
-  // const { hidden, setHidden } = useContext(HiddenContext); //movie ids
   const [hidden, setHidden] = useLocalStorage("hidden", []);
-
-  console.log("1", hidden);
 
   const handleTrash = (id) => {
     // test if id is in array

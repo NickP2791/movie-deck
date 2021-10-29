@@ -1,8 +1,24 @@
 .footer {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(to right, #3f51b5, #081625);
+  color: #979776;
+  height: 100%;
+}
+
+.attribute {
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4c4c3e;
+
   color: #979776;
-  height: 1.9em;
+  height: 100%;
+  width: 13em;
+}
+
+div.attribute > img {
+  margin: 0.5em 0;
+  min-width: 10vw;
+  padding: 0 1em;
 }

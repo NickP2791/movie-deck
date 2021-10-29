@@ -4,7 +4,6 @@ import useLocalStorage from "components/Hooks/useLocalStorage";
 export const FavoriteContext = createContext();
 
 export const FavoriteProvider = (props) => {
-  console.log("favoriteprovider ran");
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
 
   return (

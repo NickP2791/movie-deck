@@ -21,7 +21,6 @@ const Trending = () => {
     getTrending();
   }, []);
 
-  console.log(trending);
   if (!trending) return null;
   return (
     <Container maxWidth='lg'>

@@ -41,7 +41,7 @@ const yoyoVariants = {
   hidden: { scale: 0.9 },
   show: {
     scale: 1.2,
-    transition: { yoyo: 20 },
+    transition: { repeat: 20, repeatType: "reverse", duration: 0.7 },
   },
 };
 
@@ -69,6 +69,7 @@ const Questions = () => {
     setQuestList((prev) => [...prev.splice(2, prev.length)]);
   };
 
+  //when number of questions have hit 5, then move to results
   if (questNum > 5) {
     history.push({ pathname: "./Results" });
   }

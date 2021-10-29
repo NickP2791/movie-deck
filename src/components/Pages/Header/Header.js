@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     maxHeight: "2em",
+    // maxWidth: ".5em",
   },
 }));
 

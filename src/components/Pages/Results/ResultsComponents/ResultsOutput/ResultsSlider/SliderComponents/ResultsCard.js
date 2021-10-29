@@ -4,8 +4,6 @@ import "./ResultsCard.css";
 import nophoto from "components/Data/images/nophoto.jpg";
 
 const ResultsCard = ({ movie, index }) => {
-  console.log(movie);
-
   return (
     <label htmlFor={`s${index}`} id={`slide${index}`}>
       {

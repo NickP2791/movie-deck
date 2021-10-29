@@ -52,8 +52,15 @@ const MovieList = ({ actorId }) => {
       </Typography>
       <Grid container spacing={2}>
         {movieList.map((eachmovie) => (
-          <Grid item xs={6} sm={4} md={3} lg={2} align='center'>
-            <Card className={classes.card} key={eachmovie.id}>
+          <Grid
+            item
+            xs={6}
+            sm={4}
+            md={3}
+            lg={2}
+            align='center'
+            key={eachmovie.id}>
+            <Card className={classes.card}>
               <CardMedia
                 className={classes.cardMedia}
                 image={

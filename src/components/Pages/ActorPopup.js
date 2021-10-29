@@ -12,10 +12,10 @@ import {
   makeStyles,
 } from "@material-ui/core";
 
+//material UI styling
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
     paddingTop: "150%",
-    // float: "left",
   },
   cardActions: {
     position: "absolute",
@@ -57,6 +57,8 @@ const ActorPopup = ({ open, onClose, bio }) => {
   const { name, birthday, place_of_birth, biography, profile_path, deathday } =
     bio;
 
+  console.log("path", profile_path);
+
   if (!open) return null;
   return ReactDOM.createPortal(
     <>
@@ -69,17 +71,18 @@ const ActorPopup = ({ open, onClose, bio }) => {
               variant='outlined'
               onClick={onClose}
               size='small'
-              color='white'
-              style={{ minWidth: 10, border: "none" }}>
+              style={{ minWidth: 10, border: "none", color: "white" }}>
               <FaWindowClose style={{ fontSize: "2em" }} />
             </Button>
           </CardActions>
           <Grid container spacing={2} style={{ padding: "1em" }}>
             <Grid item xs={3} md={2}>
-              <CardMedia
-                className={classes.cardMedia}
-                image={requests.getImage(profile_path)}
-              />
+              {profile_path !== undefined && (
+                <CardMedia
+                  className={classes.cardMedia}
+                  image={requests.getImage(profile_path)}
+                />
+              )}
             </Grid>
             <Grid item xs={8} md={6}>
               <Typography variant='body1'>{`Name: ${name}`}</Typography>

@@ -36,17 +36,6 @@ const containerVariants = {
   },
 };
 
-const leftBtnVariants = {
-  hidden: { x: "-100vw" },
-  show: {
-    x: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-    },
-  },
-};
-
 const rightBtnVariants = {
   hidden: { x: "100vw" },
   show: {
@@ -62,7 +51,10 @@ const rightBtnVariants = {
 
 const FavoriteYear = () => {
   const { setPage } = useContext(PageContext);
+  //This is the years displaying on the screen
   const [years, setYears] = useLocalStorage("years", [1970, 1980]);
+  //because the slider for the years run from right to left, had to run
+  //some math to make that happen. This is years running in to background
   const [internalYears, setInternalYears] = useState();
 
   //set page title in Header
@@ -117,8 +109,6 @@ const FavoriteYear = () => {
           <Grid item xs={6} align='right'>
             <Link to='/favoritelist'>
               <Button
-                // component={motion.div}
-                // variants={leftBtnVariants}
                 startIcon={<IoChevronBack fontSize='2em' />}
                 variant='contained'
                 color='primary'

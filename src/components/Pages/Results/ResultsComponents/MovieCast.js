@@ -14,6 +14,7 @@ import {
 import noman from "components/Data/images/noman.jpg";
 import nowoman from "components/Data/images/nowoman.jpg";
 
+//material UI styling
 const useStyles = makeStyles({
   btn: {
     textTransform: "none",
@@ -88,9 +89,7 @@ const MovieCast = ({ cast, actorid }) => {
       <ActorPopup
         bio={bio}
         open={openPopup}
-        onClose={() => setOpenPopup(false)}>
-        {/* {id} */}
-      </ActorPopup>
+        onClose={() => setOpenPopup(false)}></ActorPopup>
     </>
   );
 };
