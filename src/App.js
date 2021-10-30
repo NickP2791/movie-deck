@@ -1,5 +1,5 @@
-import "./App.css";
 import React from "react";
+import "./App.css";
 import { Switch, Route, useLocation } from "react-router-dom";
 import Header from "components/Pages/Header/Header";
 import Footer from "components/Pages/Footer/Footer";
@@ -12,7 +12,6 @@ import Collection from "components/Pages/Collections/Collection";
 import WishList from "components/Pages/WishList";
 import HiddenMovieList from "components/Pages/HiddenMovies/HiddenMovieList";
 import Trending from "components/Pages/Trending/Trending";
-import Testing from "./components/Testing";
 import About from "./components/Pages/About/About";
 import {
   createTheme,
@@ -43,6 +42,8 @@ let theme = createTheme({
     },
   },
 });
+
+//material UI method, to deal with fonts and such
 theme = responsiveFontSizes(theme);
 
 function App() {
@@ -73,7 +74,6 @@ function App() {
                 <Route path='/wishlist' component={WishList} />
                 <Route path='/hiddenmovielist' component={HiddenMovieList} />
                 <Route path='/trending' component={Trending} />
-                <Route path='/testing' component={Testing} />
                 <Route path='/about' component={About} />
               </Switch>
             </AnimatePresence>

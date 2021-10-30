@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext, useState, useCallback } from "react";
 import axios from "../../Data/utils/axios";
 import requests from "../../Data/utils/requests";
 import useLocalStorage from "components/Hooks/useLocalStorage";
@@ -15,7 +15,7 @@ import CheckBoxes from "./CheckBoxes";
 import { PageContext } from "../../Context/PageContext";
 import { motion } from "framer-motion";
 
-//framer motion styling
+//framer motion styling ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const containerVariants = {
   hidden: {
     x: "100vw",
@@ -65,7 +65,7 @@ const buttonVariants = {
     },
   },
 };
-
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 const FavoriteList = () => {
   const { setPage } = useContext(PageContext);
 
@@ -94,22 +94,23 @@ const FavoriteList = () => {
     setPreference([]);
   }, []);
 
+  //function outside of useEffect able to use callback. If inside, API call twice
+  const getGenreList = useCallback(async () => {
+    const response = await axios.get(requests.getGenresList);
+    setGenres([...response.data.genres]);
+    const genreArray = await response.data.genres
+      .map((id) => id.id) //extract ids
+      .filter((eachID) => !removedGenres.includes(eachID)); //filter out what is in removedlist
+    setMovies([...genreArray]);
+    return response;
+  }, [genres]);
+
   //fetch genre list from TMDB, parse out ids in movie state
   useEffect(() => {
-    const getGenreList = async () => {
-      const response = await axios.get(requests.getGenresList);
-      setGenres([...response.data.genres]);
-      const genreArray = await response.data.genres
-        .map((id) => id.id) //extract ids
-        .filter((eachID) => !removedGenres.includes(eachID)); //filter out what is in removedlist
-      setMovies([...genreArray]);
-      return response;
-    };
-
     if (!genres?.length) {
       getGenreList();
     }
-  }, [genres?.length, setGenres, setMovies]);
+  }, [genres?.length]);
 
   const handleClick = ({ target }) => {
     let { value: id, checked } = target;

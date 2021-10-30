@@ -57,8 +57,6 @@ const ActorPopup = ({ open, onClose, bio }) => {
   const { name, birthday, place_of_birth, biography, profile_path, deathday } =
     bio;
 
-  console.log("path", profile_path);
-
   if (!open) return null;
   return ReactDOM.createPortal(
     <>

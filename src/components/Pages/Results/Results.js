@@ -192,12 +192,6 @@ const Results = () => {
     }
   };
 
-  const handleRender = (ids) => {
-    console.log("handleReneder RAN");
-    console.log(ids);
-    // getmovieinfo(hidden).then((details) => setTrashedMovies([...details]));
-  };
-
   let isShowcaseGood = !!showcase && showcase.length >= 5;
 
   if (!apiResults) return null;

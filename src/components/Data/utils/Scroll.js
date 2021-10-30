@@ -42,7 +42,6 @@ const Scroll = ({ showBelow }) => {
     window[`scrollTo`]({ top: 0, behavior: "smooth" });
   };
 
-  console.log(show);
   return (
     <div>
       {show && (

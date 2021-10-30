@@ -3,7 +3,6 @@ import requests from "components/Data/utils/requests";
 
 const getmovieinfo = (arrayofids) => {
   return new Promise((resolve) => {
-    console.log(arrayofids);
     const buildMovieList = Promise.all(
       arrayofids.map(async (id) => {
         const res = await axios.get(requests.getMovieInfo(id));
@@ -13,7 +12,6 @@ const getmovieinfo = (arrayofids) => {
 
     const getlist = async () => {
       const list = await buildMovieList;
-      console.log(list);
       resolve(list);
     };
     getlist();
