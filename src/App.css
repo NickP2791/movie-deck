@@ -11,7 +11,7 @@ a {
 }
 
 .App {
-  min-height: 95vh;
+  min-height: 91vh;
   overflow-y: scroll; /*added becuase glithy screen with framer*/
 }
 
