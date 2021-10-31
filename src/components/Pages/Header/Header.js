@@ -75,7 +75,7 @@ const Header = () => {
           <Typography
             className={classes.pageName}
             color='secondary'
-            variant='h6'>
+            variant='h5'>
             {page}
           </Typography>
         </div>
