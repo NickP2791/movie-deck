@@ -54,6 +54,11 @@ const Menu = () => {
     },
   ];
 
+  const handleClick = (item) => {
+    history.push(item.path);
+    setOpen(false);
+  };
+
   return (
     <div>
       <IconButton
@@ -79,10 +84,7 @@ const Menu = () => {
           Main
           <Divider />
           {menuItems.map((item) => (
-            <ListItem
-              key={item.text}
-              button
-              onClick={() => history.push(item.path)}>
+            <ListItem key={item.text} button onClick={() => handleClick(item)}>
               {item.icon}
               <ListItemText
                 color='secondary'
