@@ -60,7 +60,7 @@ function App() {
             style={{
               backgroundImage: `url(./BGLayer1.png)`,
               backgroundPosition: "50% 50%",
-              backgroundSize: "cover",
+              backgroundSize: "100%",
             }}>
             <Header />
             <AnimatePresence exitBeforeEnter>
