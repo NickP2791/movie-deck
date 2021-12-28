@@ -1,6 +1,6 @@
 # Movie Deck API project
 
-![Project Image](project-image-url)
+![Project Image](https://user-images.githubusercontent.com/79706492/147612952-999e18e3-3593-4daf-b164-2741946bfa3e.png)
 
 > Web app built with React and a fun way to discover movies and TV shows to watch based on a small questionaire
 ---
