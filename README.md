@@ -72,7 +72,7 @@ Get a free API Key at [https://www.themoviedb.org/documentation/api](https://www
 
 MIT License
 
-Copyright (c) 2021 MovieDeck
+Copyright (c) 2021 MovieDeck by Nicolas Pauletto
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
